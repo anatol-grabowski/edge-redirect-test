@@ -39,7 +39,10 @@ providerInput.addEventListener('input', function() {
 
 sendBtn.addEventListener('click', () => {
   const req = ajax()
-  req.url = 'http://10.151.40.117:8080/h'
+  req.url = 'http://10.151.40.117:8081/redirect?split=123'  + Math.random()
+  req.headers = {
+    'av3-provider-authorization': '123',
+  }
   req.send()
   .then(resp => {
     console.log('got resp', resp)
